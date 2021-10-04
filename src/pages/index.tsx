@@ -9,7 +9,12 @@ export default function Index({ home, aboutMe }: any) {
 		<>
 			<Head>
 				<title>Kleber | devkleber</title>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0"
+				></meta>
 			</Head>
+
 			<Home home={home} />
 			<AboutMe about={aboutMe} />
 		</>
