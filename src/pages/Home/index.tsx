@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./Home.module.scss";
 
 export default function Home({ home }: any) {
@@ -10,16 +11,16 @@ export default function Home({ home }: any) {
 					<div className={styles.topLeftImage} />
 					<span
 						dangerouslySetInnerHTML={{
-							__html: home.data[0][
-								home.data[0].type
+							__html: home?.data[0][
+								home?.data[0].type
 							].text[0].text.content.replace(/\n/g, "<br />"),
 						}}
 					></span>
 					<h1
 						className={styles.title}
 						dangerouslySetInnerHTML={{
-							__html: home.data[1][
-								home.data[1].type
+							__html: home?.data[1][
+								home?.data[1].type
 							].text[0].text.content.replace(/\n/g, "<br />"),
 						}}
 					></h1>
@@ -27,8 +28,8 @@ export default function Home({ home }: any) {
 					<p className={styles.love}>
 						<span
 							dangerouslySetInnerHTML={{
-								__html: home.data[2][
-									home.data[2].type
+								__html: home?.data[2][
+									home?.data[2].type
 								].text[0].text.content.replace(/\n/g, "<br />"),
 							}}
 						/>
@@ -37,8 +38,8 @@ export default function Home({ home }: any) {
 						<span
 							className={styles.letsChat}
 							dangerouslySetInnerHTML={{
-								__html: home.data[3][home.data[3].type].text[0]
-									.text.content,
+								__html: home?.data[3][home?.data[3].type]
+									.text[0].text.content,
 							}}
 						></span>
 					</p>
@@ -47,23 +48,23 @@ export default function Home({ home }: any) {
 						<div className={styles.item}>
 							<div className={styles.value}>
 								{new Date().getFullYear() -
-									home.experence?.value}
+									home?.experence?.value}
 							</div>
 							<div className={styles.name}>
-								{home.experence?.label}
+								{home?.experence?.label}
 							</div>
 						</div>
 						<div className={styles.item}>
 							<div className={styles.value}>
-								{home.projects.value}
+								{home?.projects.value}
 							</div>
 							<div className={styles.name}>
-								{home.projects.label}
+								{home?.projects.label}
 							</div>
 						</div>
 					</div>
 					<div className={styles.social}>
-						{home.social.map((item: any) => (
+						{home?.social.map((item: any) => (
 							<div key={item.plain_text}>
 								<a
 									target="_blank"
