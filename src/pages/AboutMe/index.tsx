@@ -10,16 +10,16 @@ export default function AboutMe({ about }: any) {
 						<p
 							className={styles.titleMe}
 							dangerouslySetInnerHTML={{
-								__html: about.data[0][
-									about.data[0].type
+								__html: about?.data[0][
+									about?.data[0].type
 								].text[0].text.content.replace(/\n/g, "<br />"),
 							}}
 						></p>
 						<p
 							className={styles.titleMeDescription}
 							dangerouslySetInnerHTML={{
-								__html: about.data[1][
-									about.data[1].type
+								__html: about?.data[1][
+									about?.data[1].type
 								].text[0].text.content.replace(/\n/g, "<br />"),
 							}}
 						></p>
@@ -27,12 +27,12 @@ export default function AboutMe({ about }: any) {
 						<div className={styles.hoobies}>
 							<p className={styles.titleGroup}>
 								{
-									about.data[2][about.data[2].type].text[0]
+									about?.data[2][about?.data[2].type].text[0]
 										.text.content
 								}
 							</p>
 							<div className={styles.items}>
-								{about.hobbies.map((hobbie: any): any => (
+								{about?.hobbies.map((hobbie: any): any => (
 									<span className={styles.item} key={hobbie}>
 										{hobbie}
 									</span>
@@ -43,8 +43,8 @@ export default function AboutMe({ about }: any) {
 					<div
 						className={styles.frase}
 						dangerouslySetInnerHTML={{
-							__html: about.data[4][
-								about.data[4].type
+							__html: about?.data[4][
+								about?.data[4].type
 							].text[0].text.content.replace(/\n/g, "<br />"),
 						}}
 					></div>
